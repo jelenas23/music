@@ -13,7 +13,7 @@ mysqli_free_result($result);
 <html lang="en">
 
 <?php include('komponente/header.php'); ?>
-<h1>jbj</h1>
+
 <div class="row">
     <?php foreach ($pesme as $pesma) : ?>
         <div class="col s12 m6 l4 xl3">

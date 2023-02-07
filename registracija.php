@@ -9,12 +9,12 @@ $email = $username = $password = '';
 
 $errors = ['email' => '', 'username' => '', 'password' => ''];
 
-if (isset($_POST['registration'])) { // kada pritisnemo submit dugme sa nazivom registration
+if (isset($_POST['registration'])) {
 
-    if (empty($_POST['email'])) {  // provera da li je prazno polje
-        $errors['email'] = 'Unesite email!';  // greška koja se upisuje u niz grešaka
+    if (empty($_POST['email'])) {  
+        $errors['email'] = 'Unesite email!'; 
     } else {
-        $email = $_POST['email']; // dodela vrednosti kako bi u slučaju ispravnosti forme ostala upisana za ponovni unos
+        $email = $_POST['email']; 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors['email'] = 'Neispravna email adresa!';
         }
@@ -30,7 +30,7 @@ if (isset($_POST['registration'])) { // kada pritisnemo submit dugme sa nazivom 
         $userWithSameUsername = mysqli_fetch_assoc($result);
         mysqli_free_result($result);
 
-        if ($userWithSameUsername != null) { // ako niz nije prazan - imamo korisnike sa tim username
+        if ($userWithSameUsername != null) { 
             $errors['username'] = "Korisnik sa ovim korisnickim imenom vec postoji!";
         }
     }
@@ -44,7 +44,7 @@ if (isset($_POST['registration'])) { // kada pritisnemo submit dugme sa nazivom 
         }
     }
 
-    if (!array_filter($errors)) {  // ako niz grešaka ima samo false vrednosti tj. prazne stringove 
+    if (!array_filter($errors)) {  
         $email = $_POST['email'];
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -66,7 +66,7 @@ if (isset($_POST['registration'])) { // kada pritisnemo submit dugme sa nazivom 
 <section class="container">
     <h4 class="center">Registrujte se na iTunes Favourites i podelite sa nama svoje favorite</h4>
 
-    <!-- FORM -->
+   
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="white form" method="POST">
         <label for="email">Email:</label>
         <input type="text" name="email" value="<?php echo htmlspecialchars($email); ?>">
