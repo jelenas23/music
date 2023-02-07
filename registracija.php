@@ -81,7 +81,7 @@ if (isset($_POST['registration'])) {
         <div class="red-text"><?php echo $errors['password']; ?></div>
 
         <div class="center">
-            <input type="submit" name="registration" value="Kreiraj nalog" class="btn cyan darken-2 z-depth-0">
+            <input type="submit" name="registration" value="Kreiraj nalog" class="btn red lighten-1 z-depth-5"">
         </div>
     </form>
 </section>

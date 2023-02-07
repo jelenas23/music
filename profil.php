@@ -23,25 +23,24 @@ mysqli_free_result($result);
 
     <h1 class="center">Nemate dozvolu za pregled profila ovog korisnika, bicete preusmereni na pocetnu stranu!</h1>
     <div class="center">
-        <a href="index.php" class="btn center cyan darken-2">Return</a>
+        <a href="index.php" class="btn center red darken-2">Return</a>
     </div>
 
 <?php elseif ($pesme!= null) : ?>
 
     <div class="container">
-        <h2 class="center">Tvoji iTunes favoriti</h2>
+        <h2 class="center blue-text"><b>Tvoji iTunes favoriti<b></h2>
         <div class="row">
             <?php foreach ($pesme as $pesma) : ?>
                 <div class="col s12 m6 l4 xl3">
-                    <div class="card z-depth-0 radius-card">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/ITunes_12_logo.png" alt="icon" class="icon-card">
+                    <div class="card z-depth-40 radius-card">
+                        <img src="https://cutewallpaper.org/cdn-cgi/mirage/2af0adefb1b7ebf6af3b94bf8b86378693ec8b55d34af727ac0cbb58dfd044f5/1280/24/itunes-logo-png/itunes-logo-png-transparent-designbust.png" alt="icon" class="icon-card">
                         <div class="card-content center">
                             <h4><b>My Fav</b><h4>
                             <h5><?php echo htmlspecialchars($pesma['naziv']); ?></h5>
                             <h6><?php echo htmlspecialchars($pesma['izvodjac']); ?></h6>
-                        </div>
-                        <div class="card-action right-align radius-card">
-                            <a href="detalji.php?id=<?php echo $pesma['id']; ?>" class="cyan-text text-darken-2">
+                            
+                            <a href="detalji.php?id=<?php echo $pesma['id']; ?>" class="btn white-text red lighten-1">
                                 Detaljnije
                             </a>
                         </div>
@@ -55,7 +54,7 @@ mysqli_free_result($result);
 
     <h1 class="center">Nisi dodao/la svoje favorite, iskoristi priliku i podeli ih sa ostalima!</h1>
     <div class="center">
-        <a href="dodaj.php" class="btn center cyan darken-2">Dodaj</a>
+        <a href="dodaj.php" class="btn center red ligtehn-1">Dodaj</a>
     </div>
 
 <?php endif; ?>

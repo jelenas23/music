@@ -16,15 +16,14 @@ mysqli_free_result($result);
 
 <div class="row">
     <?php foreach ($pesme as $pesma) : ?>
-        <div class="col s12 m6 l4 xl3">
-            <div class="card z-depth-0 radius-card">
+        <div class="col s15 m7 l5 xl4">
+            <div class="card z-depth-20 radius-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/ITunes_12.2_logo.png/600px-ITunes_12.2_logo.png" alt="icon" class="icon-card">
                 <div class="card-content center">
                     <h5><b><?php echo htmlspecialchars($pesma['naziv']); ?></b></h5>
                     <h6><?php echo htmlspecialchars($pesma['izvodjac']); ?></h6>
-                </div>
-                <div class="card-action right-align radius-card">
-                    <a href="detalji.php?id=<?php echo $pesma['id']; ?>" class="cyan-text text-darken-2">
+                
+                    <a href="detalji.php?id=<?php echo $pesma['id']; ?>" class="btn white-text red lighten-1">
                         Detaljnije
                     </a>
                 </div>

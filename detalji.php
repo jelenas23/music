@@ -41,12 +41,12 @@ if (isset($_POST['delete'])) {
 <?php if ($pesma == null) : ?>
     <h1 class="center">Nemamo informacije!</h1>
     <div class="center">
-        <a href="index.php" class="btn center cyan darken-2">Nazad</a>
+        <a href="index.php" class="btn center red darken-2">Nazad</a>
     </div>
 
 <?php else : ?>
     <div class="container center">
-        <div class="card z-depth-0 radius-card" style="padding-bottom: 30px;">
+        <div class="card z-depth-100 x-depth-20 radius-card" style="padding-bottom: 30px;">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/ITunes_logo.svg/1019px-ITunes_logo.svg.png" alt="icon" class="icon-card">
             <h3><?php echo $pesma['naziv']; ?></h3>
             <h4>Izvodjac :<?php echo $pesma['izvodjac']; ?></h4>
@@ -57,10 +57,10 @@ if (isset($_POST['delete'])) {
 
             <?php if ($userid == $loggedId) { ?>
 
-                <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" style="padding-top:20px">
+                <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" style="padding-top:25px">
                     <input type="hidden" name="id" value="<?php echo $id; ?>">
                     <input type="hidden" name="userid" value="<?php echo $userid; ?>">
-                    <input type="submit" name="delete" value="Obrisi" class="btn center cyan darken-2">
+                    <input type="submit" name="delete" value="Obrisi" class="btn center red lighten-1">
                 </form>
 
             <?php } else { ?>

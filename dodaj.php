@@ -113,7 +113,7 @@ if (isset($_POST['add'])) {
         <input type="hidden" name="userid" value="<?php echo $loggedId; ?>">
 
         <div class="center">
-            <input type="submit" name="add" value="Dodaj" class="btn cyan darken-2 z-depth-0">
+            <input type="submit" name="add" value="Dodaj" class="btn red darken-2 z-depth-0">
         </div>
     </form>
 
