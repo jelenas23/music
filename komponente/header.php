@@ -37,7 +37,8 @@ if (isset($_POST['logout'])) {
         }
 
         .form {
-            padding: 10px;
+            padding: 20px;
+            margin-top:50px;
             margin-left: 25%;
             width: 50%;
             text-align: center;
