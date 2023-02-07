@@ -41,7 +41,7 @@ mysqli_free_result($result);
                             <h6><?php echo htmlspecialchars($pesma['izvodjac']); ?></h6>
                         </div>
                         <div class="card-action right-align radius-card">
-                            <a href="show.php?id=<?php echo $pesma['id']; ?>" class="cyan-text text-darken-2">
+                            <a href="detalji.php?id=<?php echo $pesma['id']; ?>" class="cyan-text text-darken-2">
                                 Detaljnije
                             </a>
                         </div>
@@ -53,7 +53,7 @@ mysqli_free_result($result);
 
 <?php else : ?>
 
-    <h1 class="center">Nisi dodao/la svoje fevorite, iskoristi priliku i podeli ih sa ostalima!</h1>
+    <h1 class="center">Nisi dodao/la svoje favorite, iskoristi priliku i podeli ih sa ostalima!</h1>
     <div class="center">
         <a href="add.php" class="btn center cyan darken-2">Dodaj</a>
     </div>

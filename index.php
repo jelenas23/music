@@ -24,7 +24,7 @@ mysqli_free_result($result);
                     <h6><?php echo htmlspecialchars($pesma['izvodjac']); ?></h6>
                 </div>
                 <div class="card-action right-align radius-card">
-                    <a href="show.php?id=<?php echo $pesma['id']; ?>" class="cyan-text text-darken-2">
+                    <a href="detalji.php?id=<?php echo $pesma['id']; ?>" class="cyan-text text-darken-2">
                         Detaljnije
                     </a>
                 </div>
