@@ -23,8 +23,8 @@
             $database = 'domaci1';
             $conn = mysqli_connect($host, $user, $password, $database);
 
-            $query = "INSERT INTO korisnik (username, password,email) 
-            VALUES ('$this->username', '$this->password','$this->email',)";
+            $query = "INSERT INTO korisnik (username, password ,email) 
+            VALUES ('$this->username', '$this->password','$this->email')";
 
             if (mysqli_query($conn, $query)) {
                 header('Location: login.php');

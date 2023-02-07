@@ -20,8 +20,8 @@ mysqli_free_result($result);
             <div class="card z-depth-0 radius-card">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/ITunes_12.2_logo.png/600px-ITunes_12.2_logo.png" alt="icon" class="icon-card">
                 <div class="card-content center">
-                    <h5><?php echo htmlspecialchars($pesma['naziv']); ?></h5>
-                    <h6>Izvodi<?php echo htmlspecialchars($pesma['izvodjac']); ?></h6>
+                    <h5><b><?php echo htmlspecialchars($pesma['naziv']); ?></b></h5>
+                    <h6><?php echo htmlspecialchars($pesma['izvodjac']); ?></h6>
                 </div>
                 <div class="card-action right-align radius-card">
                     <a href="show.php?id=<?php echo $pesma['id']; ?>" class="cyan-text text-darken-2">
