@@ -99,8 +99,9 @@ if (isset($_POST['add'])) {
         <div class="red-text"><?php echo $errors['izvodjac']; ?></div>
 
         <label for="zanr">Zanr:</label>
-        <input type="text" name="zanr" value="<?php echo htmlspecialchars($zanr) ?>">
+        <input type="text" name="zanr" value="<?php echo htmlspecialchars($zanr) ?>" onkeyup="predloziZanr(this.value)">
         <div class="red-text"><?php echo $errors['zanr']; ?></div>
+        <p><span id="predloziZanr"></span></p>
 
         <label for="trajanje">Trajanje:</label>
         <input type="text" name="trajanje" value="<?php echo htmlspecialchars($trajanje) ?>">
@@ -122,5 +123,21 @@ if (isset($_POST['add'])) {
 
 <?php include('komponente/footer.php'); ?>
 
+<script>
+    function predloziZanr(str = "") {
+        if (str.length == 0) {
+            document.getElementById("predloziZanr").innerHTML = "";
+        } else {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("predloziZanr").innerHTML = this.responseText;
+                }
+            }
+            xmlhttp.open("GET", "ajax-predlozi/zanr.php?query=" + str, true);
+            xmlhttp.send();
+        }
+    }
+</script>
 
 </html>
