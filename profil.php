@@ -55,7 +55,7 @@ mysqli_free_result($result);
 
     <h1 class="center">Nisi dodao/la svoje favorite, iskoristi priliku i podeli ih sa ostalima!</h1>
     <div class="center">
-        <a href="add.php" class="btn center cyan darken-2">Dodaj</a>
+        <a href="dodaj.php" class="btn center cyan darken-2">Dodaj</a>
     </div>
 
 <?php endif; ?>

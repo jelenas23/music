@@ -35,7 +35,7 @@ if (isset($_POST['login'])) {
                 session_start();
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['id'] = $user['id'];
-
+                
                 header('Location: index.php');
             }
         }

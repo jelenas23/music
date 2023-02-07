@@ -18,7 +18,7 @@ class Pesma
         $this->zanr = $zanr;
         $this->trajanje = $trajanje;
         $this->godina = $godina;
-        $this->korisnik = $korisnik_id;
+        $this->korisnik_id = $korisnik_id;
         $this->created_at = $created_at;
     }
 
@@ -30,10 +30,9 @@ class Pesma
         $database = 'domaci1';
         $conn = mysqli_connect($host, $user, $password, $database);
 
-        $query = "INSERT INTO pesma (naziv, izvodjac, zanr, trajanje,
-            godina, korisnik_id)  VALUES ($this->naziv, '$this->izvodjac',
-            '$this->zanr', '$this->trajanje' , '$this->godina'
-            , '$this->korisnik_id')";
+        $query = "INSERT INTO pesma (naziv, izvodjac, zanr, trajanje, godina, korisnik_id) 
+             VALUES ('$this->naziv', '$this->izvodjac',
+            '$this->zanr', '$this->trajanje', '$this->godina', '$this->korisnik_id')";
 
         if (mysqli_query($conn, $query)) {
             header('Location: index.php');
