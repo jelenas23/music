@@ -95,8 +95,9 @@ if (isset($_POST['add'])) {
         <div class="red-text"><?php echo $errors['naziv']; ?></div>
 
         <label for="izvodjac">Izvodjac:</label>
-        <input type="text" name="izvodjac" value="<?php echo htmlspecialchars($izvodjac) ?>" >
+        <input type="text" name="izvodjac" value="<?php echo htmlspecialchars($izvodjac) ?>" onkeyup="predloziIzvodjaca(this.value)">
         <div class="red-text"><?php echo $errors['izvodjac']; ?></div>
+        <p><span id="predloziIzvodjaca"></span></p>
 
         <label for="zanr">Zanr:</label>
         <input type="text" name="zanr" value="<?php echo htmlspecialchars($zanr) ?>" onkeyup="predloziZanr(this.value)">
@@ -135,6 +136,23 @@ if (isset($_POST['add'])) {
                 }
             }
             xmlhttp.open("GET", "ajax-predlozi/zanr.php?query=" + str, true);
+            xmlhttp.send();
+        }
+    }
+</script>
+
+<script>
+    function predloziIzvodjaca(str = "") {
+        if (str.length == 0) {
+            document.getElementById("predloziIzvodjaca").innerHTML = "";
+        } else {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("predloziIzvodjaca").innerHTML = this.responseText;
+                }
+            }
+            xmlhttp.open("GET", "ajax-predlozi/izvodjac.php?query=" + str, true);
             xmlhttp.send();
         }
     }
