@@ -91,8 +91,9 @@ if (isset($_POST['add'])) {
 
     <form action="<?php echo $_SERVER['PHP_SELF'] ?>" class="white form" method="POST">
         <label for="naziv">Naziv pesme:</label>
-        <input type="text" name="naziv" value="<?php echo htmlspecialchars($naziv) ?>">
+        <input type="text" name="naziv" value="<?php echo htmlspecialchars($naziv) ?>" onkeyup="predloziPesmu(this.value)">
         <div class="red-text"><?php echo $errors['naziv']; ?></div>
+        <p><span id="predloziPesmu"></span></p>
 
         <label for="izvodjac">Izvodjac:</label>
         <input type="text" name="izvodjac" value="<?php echo htmlspecialchars($izvodjac) ?>" onkeyup="predloziIzvodjaca(this.value)">
@@ -157,5 +158,23 @@ if (isset($_POST['add'])) {
         }
     }
 </script>
+
+<script>
+    function predloziPesmu(str = "") {
+        if (str.length == 0) {
+            document.getElementById("predloziPesmu").innerHTML = "";
+        } else {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("predloziPesmu").innerHTML = this.responseText;
+                }
+            }
+            xmlhttp.open("GET", "ajax-predlozi/pesma.php?query=" + str, true);
+            xmlhttp.send();
+        }
+    }
+</script>
+
 
 </html>
